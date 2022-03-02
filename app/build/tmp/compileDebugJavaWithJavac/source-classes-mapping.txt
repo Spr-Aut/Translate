@@ -1,10 +1,15 @@
 com/spraut/translate/BuildConfig.java
  com.spraut.translate.BuildConfig
-com/spraut/translate/MainActivity.java
- com.spraut.translate.MainActivity
+com/spraut/translate/BasicTranslate.java
+ com.spraut.translate.BasicTranslate
 com/spraut/translate/TranslateResult.java
  com.spraut.translate.TranslateResult
  com.spraut.translate.TranslateResult$TransResultBean
+com/spraut/translate/MainActivity.java
+ com.spraut.translate.MainActivity
+ com.spraut.translate.MainActivity$1
+ com.spraut.translate.MainActivity$1$1
+ com.spraut.translate.MainActivity$2
 com/spraut/translate/Translate.java
  com.spraut.translate.Translate
  com.spraut.translate.Translate$1

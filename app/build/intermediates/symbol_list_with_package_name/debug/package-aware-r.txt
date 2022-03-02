@@ -1473,6 +1473,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_main_translate
 id buttonPanel
 id cancel_button
 id center
@@ -1514,6 +1515,7 @@ id end
 id enterAlways
 id enterAlwaysCollapsed
 id et_content_translate
+id et_main_content
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1688,7 +1690,10 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_add
+id tv_main_result
 id tv_result
+id tv_test
 id tv_translation
 id unchecked
 id uniform

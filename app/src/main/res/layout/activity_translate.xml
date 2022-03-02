@@ -97,4 +97,32 @@
             android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp">
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/stroke_black_radus"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="添加"
+            android:textColor="#000"
+            android:textColorLink="#ABABAB"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        />
+
 </LinearLayout>
