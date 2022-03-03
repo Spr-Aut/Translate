@@ -20,6 +20,14 @@
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_translate_2.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\layout\\activity_translate_2.xml"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_input.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\frame_input.xml"
+    },
+    {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },

@@ -1274,6 +1274,7 @@ dimen padding_horizontal_item
 dimen padding_horizontal_main
 dimen padding_top_main
 dimen padding_vertical_item
+dimen padding_vertical_main
 dimen padding_widget
 dimen rectangel_radius
 dimen test_mtrl_calendar_day_cornerSize
@@ -1393,6 +1394,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable divider
 drawable drop_down_shadow
+drawable frame_input
 drawable ic_arrow_drop_down_black_24dp
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
@@ -1510,7 +1512,10 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_add_translate
+id btn_check_translate
 id btn_main_add
+id btn_trans_translate
 id buttonPanel
 id cancel_button
 id center
@@ -1552,6 +1557,7 @@ id end
 id enterAlways
 id enterAlwaysCollapsed
 id et_content_translate
+id et_origin_translate
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1732,16 +1738,19 @@ id tv_item_origin
 id tv_item_trans
 id tv_result
 id tv_test
+id tv_trans_translate
 id tv_translation
 id unchecked
 id uniform
 id unlabeled
 id up
 id useLogo
+id view_btn_trans
 id view_item_main
 id view_item_main_slide_delete
 id view_item_main_slide_more
 id view_offset_helper
+id view_text_trans
 id visible
 id withText
 id wrap
@@ -1808,6 +1817,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_translate
+layout activity_translate_2
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

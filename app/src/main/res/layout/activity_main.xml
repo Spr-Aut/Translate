@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/main_bg"
+    android:background="@color/card_bg"
     >
     <!--顶部标题栏-->
 
@@ -14,6 +14,8 @@
         android:id="@+id/rc_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/padding_top_main"
         />
 
     <!--“添加”按钮-->
