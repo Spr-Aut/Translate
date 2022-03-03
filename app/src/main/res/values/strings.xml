@@ -9,4 +9,19 @@
     <dimen name="padding_vertical_main">16dp</dimen>
     <dimen name="padding_widget">19dp</dimen>
     <dimen name="padding_horizontal_bar_main_top">30dp</dimen>
+
+
+    <string name="about">应用信息</string>
+    <string name="about_appinfo">应用信息</string>
+    <string name="about_version">版本</string>
+    <string name="about_app">关于应用</string>
+    <string name="about_balabala">目前并非最终版本，努力更新中\n不能保证稳定性\n该应用无需联网，因此您无需担心隐私泄露</string>
+    <string name="about_developer">开发者</string>
+    <string name="about_me">关于我</string>
+    <string name="about_loc">SprAut</string>
+    <string name="about_email">邮箱</string>
+    <string name="about_email2">1493706520@qq.com\nff1493706520@163.com</string>
+
+    <string name="version">v0.1.1.22030301</string>
+
 </resources>

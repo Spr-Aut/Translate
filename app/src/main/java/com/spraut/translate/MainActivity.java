@@ -1,18 +1,28 @@
 package com.spraut.translate;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActivityOptions;
+import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -38,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private List<Note> mNotes;
     private NoteDbOpenHelper mNoteDbOpenHelper;
+
+    private ImageView ivInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +81,25 @@ public class MainActivity extends AppCompatActivity {
         //添加按钮
         btnAdd=findViewById(R.id.btn_main_add);
         btnAdd.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
+                shake();
                 Intent intent=new Intent(MainActivity.this,Translate.class);
                 startActivity(intent);
+            }
+        });
+
+        ivInfo=findViewById(R.id.iv_main_top_icon);
+        ivInfo.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                shake();
+                Pair pairInfo=new Pair<>(ivInfo,"ivInfo");
+                ActivityOptions activityOptions=ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairInfo);
+                Intent intent=new Intent(MainActivity.this,AboutActivity.class);
+                startActivity(intent,activityOptions.toBundle());
             }
         });
 
@@ -104,5 +131,17 @@ public class MainActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         /*window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);*/
         window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void shake(){
+        //震动
+        Vibrator vibrator=(Vibrator)getSystemService(Service.VIBRATOR_SERVICE);
+        vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK));
+    }
+
+    public void onBackPressed(){
+        super.onBackPressed();
+        overridePendingTransition(R.anim.base_slide_bottom_in,R.anim.base_slide_top_ou);
     }
 }

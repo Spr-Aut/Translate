@@ -1,17 +1,27 @@
 package com.spraut.translate;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
+import android.app.Service;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -45,6 +55,11 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
     private TextView tvTranslation;//翻译
     private TextView tvAdd;//添加
     private TextView tvTest;
+    private Button btnTrans;
+    private Button btnAdd;
+    private Button btnCheck;
+    private Button btnClear;
+
 
     private LinearLayout resultLay;//翻译结果布局
     private TextView tvResult;//翻译的结果
@@ -63,7 +78,7 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_translate);
+        setContentView(R.layout.activity_translate_2);
 
         setStatusBar();
 
@@ -71,18 +86,28 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
     }//onCreate
 
     private void initView(){
-        etContent=findViewById(R.id.et_content_translate);
-        ivClearTx=findViewById(R.id.iv_clear_tx);
+        etContent=findViewById(R.id.et_origin_translate);
+        tvResult=findViewById(R.id.tv_trans_translate);
+        btnTrans=findViewById(R.id.btn_trans_translate);
+        btnClear=findViewById(R.id.btn_clear_translate);
+        btnAdd=findViewById(R.id.btn_add_translate);
+        btnCheck=findViewById(R.id.btn_check_translate);
+
+        /*ivClearTx=findViewById(R.id.iv_clear_tx);
         resultLay=findViewById(R.id.result_lay);
         tvTranslation=findViewById(R.id.tv_translation);
         tvResult=findViewById(R.id.tv_result);
         tvAdd=findViewById(R.id.tv_add);
-        tvTest=findViewById(R.id.tv_test);
+        tvTest=findViewById(R.id.tv_test);*/
+
+        //弹出键盘
+        popUpKeyboard(etContent);
 
         //点击事件
-        ivClearTx.setOnClickListener(this);
-        tvTranslation.setOnClickListener(this);
-        tvAdd.setOnClickListener(this);
+        btnClear.setOnClickListener(this);
+        btnTrans.setOnClickListener(this);
+        btnAdd.setOnClickListener(this);
+        btnCheck.setOnClickListener(this);
 
         //输入监听
         editTextListener();
@@ -93,17 +118,17 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
         etContent.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                ivClearTx.setVisibility(View.VISIBLE);//显示清除按钮
+                btnClear.setVisibility(View.VISIBLE);//显示清除按钮
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                ivClearTx.setVisibility(View.VISIBLE);//显示清除按钮
+                btnClear.setVisibility(View.VISIBLE);//显示清除按钮
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                /*ivClearTx.setVisibility(View.VISIBLE);//显示清除按钮*/
+                /*btnClear.setVisibility(View.VISIBLE);//显示清除按钮*/
                 stateSwitch(STATE_DURING_INPUT);
 
                 String content=etContent.getText().toString().trim();
@@ -119,23 +144,31 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
     }
 
     //点击事件
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View v) {
+        shake();
         switch (v.getId()){
-            case R.id.iv_clear_tx://清空输入框
+            case R.id.btn_clear_translate://清空输入框
                 /*etContent.setText("");
                 ivClearTx.setVisibility(View.GONE);*/
                 stateSwitch(STATE_INIT);
                 break;
-            case R.id.tv_translation://翻译
+            case R.id.btn_trans_translate://翻译
                 translate();
                 break;
-            case R.id.tv_add:
+            case R.id.btn_add_translate://添加到单词本
                 /*String test=tvResult.getText().toString()+etContent.getText().toString();
                 tvTest.setText(test);*/
                 String input=etContent.getText().toString();
                 String output=tvResult.getText().toString();
                 addData(input,output);
+                break;
+            case R.id.btn_check_translate://查看单词本
+                hideKeyboard();
+                Intent intent=new Intent(Translate.this,MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.base_slide_top_in,R.anim.base_slide_bottom_ou);
             default:
                 break;
         }
@@ -247,32 +280,28 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
         switch (state){
             case STATE_BEFORE_INPUT:
                 tvResult.setText("");
-                resultLay.setVisibility(View.GONE);//隐藏翻译结果
-                tvTranslation.setVisibility(View.VISIBLE);//显示翻译按钮
-                ivClearTx.setVisibility(View.GONE);//隐藏清除按钮
-                tvAdd.setVisibility(View.GONE);//隐藏添加按钮
+                btnTrans.setVisibility(View.VISIBLE);//显示翻译按钮
+                btnClear.setVisibility(View.GONE);//隐藏清除按钮
+                btnAdd.setVisibility(View.GONE);//隐藏添加按钮
                 break;
             case STATE_DURING_INPUT:
-                resultLay.setVisibility(View.GONE);//隐藏翻译结果
-                tvTranslation.setVisibility(View.VISIBLE);//显示翻译按钮
-                ivClearTx.setVisibility(View.VISIBLE);//显示清除按钮
-                tvAdd.setVisibility(View.GONE);//隐藏添加按钮
+                btnTrans.setVisibility(View.VISIBLE);//显示翻译按钮
+                btnClear.setVisibility(View.VISIBLE);//显示清除按钮
+                btnAdd.setVisibility(View.GONE);//隐藏添加按钮
                 break;
             case STATE_DURING_TRANS:
-                tvTranslation.setText("翻译中...");
-                tvTranslation.setEnabled(false);//不可更改，同样就无法点击
-                resultLay.setVisibility(View.GONE);//隐藏翻译结果
-                tvTranslation.setVisibility(View.VISIBLE);//显示翻译按钮
-                ivClearTx.setVisibility(View.VISIBLE);//显示清除按钮
-                tvAdd.setVisibility(View.GONE);//隐藏添加按钮
+                btnTrans.setText("翻译中...");
+                btnTrans.setEnabled(false);//不可更改，同样就无法点击
+                btnTrans.setVisibility(View.VISIBLE);//显示翻译按钮
+                btnClear.setVisibility(View.VISIBLE);//显示清除按钮
+                btnAdd.setVisibility(View.GONE);//隐藏添加按钮
                 break;
             case STATE_AFTER_TRANS:
-                tvTranslation.setText("翻译");
-                tvTranslation.setEnabled(true);
-                resultLay.setVisibility(View.VISIBLE);//显示翻译结果
-                tvTranslation.setVisibility(View.GONE);//隐藏翻译按钮
-                tvAdd.setVisibility(View.VISIBLE);//显示添加按钮
-                ivClearTx.setVisibility(View.VISIBLE);//显示清除按钮
+                btnTrans.setText("翻译");
+                btnTrans.setEnabled(true);
+                btnTrans.setVisibility(View.GONE);//隐藏翻译按钮
+                btnAdd.setVisibility(View.VISIBLE);//显示添加按钮
+                btnClear.setVisibility(View.VISIBLE);//显示清除按钮
                 break;
             case STATE_AFTER_ADD:
                 stateSwitch(STATE_INIT);
@@ -281,10 +310,9 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
             case STATE_INIT:
                 etContent.setText("");
                 tvResult.setText("");
-                resultLay.setVisibility(View.GONE);//隐藏翻译结果
-                tvTranslation.setVisibility(View.VISIBLE);//显示翻译按钮
-                ivClearTx.setVisibility(View.GONE);//隐藏清除按钮
-                tvAdd.setVisibility(View.GONE);//隐藏添加按钮
+                btnTrans.setVisibility(View.VISIBLE);//显示翻译按钮
+                btnClear.setVisibility(View.GONE);//隐藏清除按钮
+                btnAdd.setVisibility(View.GONE);//隐藏添加按钮
                 break;
             default:
                 break;
@@ -307,4 +335,26 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
         window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }
 
+    //自动弹出键盘
+    private void popUpKeyboard(EditText editText){
+        editText.requestFocus();
+        editText.setFocusable(true);
+        editText.setFocusableInTouchMode(true);
+        Translate.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+    }
+
+    //收起键盘
+    private void hideKeyboard(){
+        InputMethodManager inputMethodManager=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        if(inputMethodManager!=null){
+            inputMethodManager.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(),0);
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void shake(){
+        //震动
+        Vibrator vibrator=(Vibrator)getSystemService(Service.VIBRATOR_SERVICE);
+        vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK));
+    }
 }

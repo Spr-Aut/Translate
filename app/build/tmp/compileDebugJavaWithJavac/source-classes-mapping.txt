@@ -7,7 +7,10 @@ com/spraut/translate/Adapter/TransAdapter.java
  com.spraut.translate.Adapter.TransAdapter
  com.spraut.translate.Adapter.TransAdapter$1
  com.spraut.translate.Adapter.TransAdapter$2
+ com.spraut.translate.Adapter.TransAdapter$3
  com.spraut.translate.Adapter.TransAdapter$TransViewHolder
+com/spraut/translate/AboutActivity.java
+ com.spraut.translate.AboutActivity
 com/spraut/translate/DataBase/Note.java
  com.spraut.translate.DataBase.Note
 com/spraut/translate/BasicTranslate.java
@@ -20,6 +23,7 @@ com/spraut/translate/TranslateResult.java
 com/spraut/translate/MainActivity.java
  com.spraut.translate.MainActivity
  com.spraut.translate.MainActivity$1
+ com.spraut.translate.MainActivity$2
 com/spraut/translate/SlideRecyclerView/SlideRecyclerView.java
  com.spraut.translate.SlideRecyclerView.SlideRecyclerView
 com/spraut/translate/BuildConfig.java

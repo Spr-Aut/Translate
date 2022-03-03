@@ -11,6 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="@dimen/padding_vertical_main"
         >
         <!--文本部分-->
         <LinearLayout
@@ -20,78 +21,145 @@
             android:orientation="horizontal"
             >
             <!--原文-->
-            <EditText
-                android:id="@+id/et_origin_translate"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/frame_input"
-                android:hint="请输入要翻译的内容"
-                android:textSize="20sp"
-                android:textColor="@color/main_typeface"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="原文"
+                    android:textSize="20sp"
+                    android:textColor="@color/main_typeface"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/padding_vertical_main"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <EditText
+                    android:id="@+id/et_origin_translate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/frame_input"
+                    android:textSize="20sp"
+                    android:textColor="@color/main_typeface"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    />
+            </LinearLayout>
+
+
+            <!--留白-->
+            <View
+                android:layout_width="@dimen/padding_horizontal_main"
+                android:layout_height="match_parent"
                 />
+
             <!--译文-->
-            <TextView
-                android:id="@+id/tv_trans_translate"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Hello world! How are you?"
-                android:textSize="20sp"
-                android:textColor="@color/main_typeface"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="10dp"
-                />
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="译文"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/padding_vertical_main"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:id="@+id/tv_trans_translate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/frame_input"
+                    android:textSize="20sp"
+                    android:textColor="@color/main_typeface"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    />
+            </LinearLayout>
+
         </LinearLayout>
 
         <!--按键部分-->
         <LinearLayout
             android:id="@+id/view_btn_trans"
-            android:layout_width="match_parent"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:orientation="vertical"
             android:layout_below="@+id/view_text_trans"
             >
-            <!--翻译按钮-->
-            <Button
-                android:id="@+id/btn_trans_translate"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="翻译"
-                android:textStyle="bold"
-                android:textColor="@color/main_typeface"
-                android:textSize="20sp"
-                android:background="@drawable/btn_bg_selector"
-                android:layout_marginTop="@dimen/padding_vertical_main"
-                />
-            <!--添加按钮-->
-            <Button
-                android:id="@+id/btn_add_translate"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="添加到单词本"
-                android:textStyle="bold"
-                android:textColor="@color/main_typeface"
-                android:textSize="20sp"
-                android:background="@drawable/btn_bg_selector"
-                android:layout_marginTop="@dimen/padding_vertical_main"
-                android:visibility="gone"
-                />
             <!--查看单词本按钮-->
             <Button
                 android:id="@+id/btn_check_translate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/wordlist"
                 android:text="查看单词本"
                 android:textStyle="bold"
                 android:textColor="@color/main_typeface"
                 android:textSize="20sp"
                 android:background="@drawable/btn_bg_selector"
                 android:layout_marginTop="@dimen/padding_vertical_main"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="5dp"
+                />
+            <!--翻译按钮-->
+            <Button
+                android:id="@+id/btn_trans_translate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/translate"
+                android:text="翻译"
+                android:textStyle="bold"
+                android:textColor="@color/main_typeface"
+                android:textSize="20sp"
+                android:background="@drawable/btn_bg_selector"
+                android:layout_marginTop="@dimen/padding_vertical_main"
+                android:layout_marginBottom="@dimen/padding_vertical_main"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="10dp"
+                />
+            <!--添加按钮-->
+            <Button
+                android:id="@+id/btn_add_translate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/add"
+                android:text="添加"
+                android:textStyle="bold"
+                android:textColor="@color/main_typeface"
+                android:textSize="20sp"
+                android:background="@drawable/btn_bg_selector"
+                android:layout_marginTop="@dimen/padding_vertical_main"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/padding_vertical_main"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="10dp"
+                />
+            <!--清空按钮-->
+            <Button
+                android:id="@+id/btn_clear_translate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/clear"
+                android:text="清空"
+                android:textStyle="bold"
+                android:textColor="@color/main_typeface"
+                android:textSize="20sp"
+                android:background="@drawable/btn_bg_selector"
+                android:layout_marginBottom="@dimen/padding_vertical_main"
+                android:visibility="gone"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="5dp"
                 />
 
         </LinearLayout>

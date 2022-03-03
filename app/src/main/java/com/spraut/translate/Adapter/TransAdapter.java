@@ -1,20 +1,27 @@
 package com.spraut.translate.Adapter;
 
+import android.app.Service;
 import android.content.Context;
+import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.spraut.translate.DataBase.Note;
 import com.spraut.translate.DataBase.NoteDbOpenHelper;
 import com.spraut.translate.R;
+import com.spraut.translate.Translate;
 
 import java.util.List;
 
@@ -76,12 +83,14 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         notifyDataSetChanged();
     }
 
+    //事件
     private void bindTransViewHolder(TransViewHolder holder,int position){
         //解决显示错乱问题
         holder.mTvOrigin.setVisibility(View.VISIBLE);
         holder.mTvTrans.setVisibility(View.VISIBLE);
         holder.mViewMain.setVisibility(View.VISIBLE);
         holder.mViewSlideDelete.setVisibility(View.VISIBLE);
+        holder.mViewSlideMore.setVisibility(View.VISIBLE);
 
         Note note=mBeanList.get(position);
 
@@ -90,13 +99,22 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         holder.mViewMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
         holder.mViewSlideDelete.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
+                shake();
                 deleteItem(note,position);
+            }
+        });
+        holder.mViewSlideMore.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                shake();
+                showMsg("更多功能正在开发中");
             }
         });
     }
@@ -116,6 +134,7 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         notifyItemRangeChanged(position,mBeanList.size()-position);
     }
 
+    //控件设置
     class TransViewHolder extends RecyclerView.ViewHolder{
         TextView mTvOrigin;
         TextView mTvTrans;
@@ -123,6 +142,7 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         CardView mCardViewSlide;
         RelativeLayout mViewMain;
         LinearLayout mViewSlideDelete;
+        LinearLayout mViewSlideMore;
 
         public TransViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -130,6 +150,18 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             this.mTvTrans=itemView.findViewById(R.id.tv_item_trans);
             this.mViewMain=itemView.findViewById(R.id.view_item_main);
             this.mViewSlideDelete=itemView.findViewById(R.id.view_item_main_slide_delete);
+            this.mViewSlideMore=itemView.findViewById(R.id.view_item_main_slide_more);
         }
+    }
+
+    private void showMsg(String msg) {
+        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void shake(){
+        //震动
+        Vibrator vibrator=(Vibrator) mContext.getSystemService(Service.VIBRATOR_SERVICE);
+        vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK));
     }
 }

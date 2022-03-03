@@ -7,19 +7,43 @@
     tools:context=".MainActivity"
     android:background="@color/card_bg"
     >
-    <!--顶部标题栏-->
 
     <!--列表-->
     <com.spraut.translate.SlideRecyclerView.SlideRecyclerView
         android:id="@+id/rc_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingTop="@dimen/padding_top_main"
+        android:layout_below="@+id/bar_main_top"
         />
 
-    <!--“添加”按钮-->
+    <!--顶部标题栏-->
+    <RelativeLayout
+        android:id="@+id/bar_main_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_top_main"
+        >
+        <ImageView
+            android:id="@+id/iv_main_top_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/wordlist"
+            android:layout_toLeftOf="@+id/tv_main_top"
+            />
+        <TextView
+            android:id="@+id/tv_main_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单词本"
+            android:textStyle="bold"
+            android:textColor="@color/main_typeface"
+            android:textSize="23sp"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
 
+
+    <!--“添加”按钮-->
     <Button
         android:id="@+id/btn_main_add"
         android:layout_width="60dp"
@@ -30,6 +54,7 @@
         android:layout_marginBottom="50dp"
         android:background="@mipmap/add"
         android:elevation="5dp"
+        android:visibility="gone"
         />
 
 

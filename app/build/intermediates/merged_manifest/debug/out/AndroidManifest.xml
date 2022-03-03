@@ -2,33 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.spraut.translate"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="0.1.1.22030301" >
 
     <uses-sdk
         android:minSdkVersion="21"
         android:targetSdkVersion="29" />
     <!-- 网络访问权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_icon_1st"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/app_icon_1st"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Translate" >
+        <activity android:name="com.spraut.translate.AboutActivity" />
         <activity android:name="com.spraut.translate.Translate" >
-        </activity>
-        <activity android:name="com.spraut.translate.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.spraut.translate.MainActivity" />
     </application>
 
 </manifest>

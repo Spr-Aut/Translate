@@ -97,7 +97,6 @@
 
     <!--翻译后的文本-->
     <style name="TextStyleTrans">
-        <item name="android:textColor">@color/widget_typeface_main</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">26sp</item>
     </style>

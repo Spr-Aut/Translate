@@ -27,8 +27,10 @@
     <color name="main_bg">#f7f7f7</color>
     <color name="card_bg">#ffffff</color>
     <color name="dialog_bg">#f5c342</color>
-    <color name="button_bg">#f6ca45</color>
-    <color name="button_bg_pressed">#f5b923</color>
+    <color name="button_bg">#ffffff</color>
+    <color name="button_bg_pressed">#4d303030</color>
+    <color name="button_bg_blue">#66bbff</color>
+    <color name="button_bg_pressed_blue">#3590C2</color>
     <color name="main_typeface">#FF000000</color>
     <color name="widget_bg">#ffffff</color>
     <color name="widget_typeface_main">#e6000000</color>
