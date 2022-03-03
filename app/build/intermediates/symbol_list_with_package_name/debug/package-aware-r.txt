@@ -1513,8 +1513,6 @@ id bottom
 id btn_main_add
 id buttonPanel
 id cancel_button
-id card_item_main
-id card_item_main_slide
 id center
 id center_horizontal
 id center_vertical
@@ -1740,6 +1738,9 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id view_item_main
+id view_item_main_slide_delete
+id view_item_main_slide_more
 id view_offset_helper
 id visible
 id withText

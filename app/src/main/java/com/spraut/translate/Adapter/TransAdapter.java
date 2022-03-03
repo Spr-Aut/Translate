@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -78,20 +80,20 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         //解决显示错乱问题
         holder.mTvOrigin.setVisibility(View.VISIBLE);
         holder.mTvTrans.setVisibility(View.VISIBLE);
-        holder.mCardView.setVisibility(View.VISIBLE);
-        holder.mCardViewSlide.setVisibility(View.VISIBLE);
+        holder.mViewMain.setVisibility(View.VISIBLE);
+        holder.mViewSlideDelete.setVisibility(View.VISIBLE);
 
         Note note=mBeanList.get(position);
 
         holder.mTvOrigin.setText(note.getKeyword());
         holder.mTvTrans.setText(note.getValue());
-        holder.mCardView.setOnClickListener(new View.OnClickListener() {
+        holder.mViewMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        holder.mCardViewSlide.setOnClickListener(new View.OnClickListener() {
+        holder.mViewSlideDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 deleteItem(note,position);
@@ -119,13 +121,15 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         TextView mTvTrans;
         CardView mCardView;
         CardView mCardViewSlide;
+        RelativeLayout mViewMain;
+        LinearLayout mViewSlideDelete;
 
         public TransViewHolder(@NonNull View itemView) {
             super(itemView);
             this.mTvOrigin=itemView.findViewById(R.id.tv_item_origin);
             this.mTvTrans=itemView.findViewById(R.id.tv_item_trans);
-            this.mCardView=itemView.findViewById(R.id.card_item_main);
-            this.mCardViewSlide=itemView.findViewById(R.id.card_item_main_slide);
+            this.mViewMain=itemView.findViewById(R.id.view_item_main);
+            this.mViewSlideDelete=itemView.findViewById(R.id.view_item_main_slide_delete);
         }
     }
 }
