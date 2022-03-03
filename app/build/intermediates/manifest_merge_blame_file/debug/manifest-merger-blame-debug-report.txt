@@ -33,22 +33,22 @@
 22        android:theme="@style/Theme.Translate" >
 22-->F:\Translate\app\src\main\AndroidManifest.xml:13:9-47
 23        <activity android:name="com.spraut.translate.Translate" >
-23-->F:\Translate\app\src\main\AndroidManifest.xml:14:9-20:20
+23-->F:\Translate\app\src\main\AndroidManifest.xml:14:9-16:20
 23-->F:\Translate\app\src\main\AndroidManifest.xml:14:19-44
-24            <intent-filter>
-24-->F:\Translate\app\src\main\AndroidManifest.xml:15:13-19:29
-25                <action android:name="android.intent.action.MAIN" />
-25-->F:\Translate\app\src\main\AndroidManifest.xml:16:17-69
-25-->F:\Translate\app\src\main\AndroidManifest.xml:16:25-66
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->F:\Translate\app\src\main\AndroidManifest.xml:18:17-77
-27-->F:\Translate\app\src\main\AndroidManifest.xml:18:27-74
-28            </intent-filter>
-29        </activity>
-30        <activity android:name="com.spraut.translate.MainActivity" >
-30-->F:\Translate\app\src\main\AndroidManifest.xml:21:9-23:20
-30-->F:\Translate\app\src\main\AndroidManifest.xml:21:19-47
+24        </activity>
+25        <activity android:name="com.spraut.translate.MainActivity" >
+25-->F:\Translate\app\src\main\AndroidManifest.xml:17:9-23:20
+25-->F:\Translate\app\src\main\AndroidManifest.xml:17:19-47
+26            <intent-filter>
+26-->F:\Translate\app\src\main\AndroidManifest.xml:18:13-22:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->F:\Translate\app\src\main\AndroidManifest.xml:19:17-69
+27-->F:\Translate\app\src\main\AndroidManifest.xml:19:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->F:\Translate\app\src\main\AndroidManifest.xml:21:17-77
+29-->F:\Translate\app\src\main\AndroidManifest.xml:21:27-74
+30            </intent-filter>
 31        </activity>
 32    </application>
 33

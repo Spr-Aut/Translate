@@ -78,23 +78,23 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\SP
 	android:theme
 		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:13:9-47
 activity#com.spraut.translate.Translate
-ADDED from F:\Translate\app\src\main\AndroidManifest.xml:14:9-20:20
+ADDED from F:\Translate\app\src\main\AndroidManifest.xml:14:9-16:20
 	android:name
 		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:14:19-44
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\Translate\app\src\main\AndroidManifest.xml:15:13-19:29
-action#android.intent.action.MAIN
-ADDED from F:\Translate\app\src\main\AndroidManifest.xml:16:17-69
-	android:name
-		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:16:25-66
-category#android.intent.category.LAUNCHER
-ADDED from F:\Translate\app\src\main\AndroidManifest.xml:18:17-77
-	android:name
-		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.spraut.translate.MainActivity
-ADDED from F:\Translate\app\src\main\AndroidManifest.xml:21:9-23:20
+ADDED from F:\Translate\app\src\main\AndroidManifest.xml:17:9-23:20
 	android:name
-		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:21:19-47
+		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:17:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from F:\Translate\app\src\main\AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from F:\Translate\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from F:\Translate\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from F:\Translate\app\src\main\AndroidManifest.xml:21:27-74
 uses-sdk
 INJECTED from F:\Translate\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\Translate\app\src\main\AndroidManifest.xml

@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Translate</string>
+    <string name="app_name">单词本</string>
+    <dimen name="rectangel_radius">10dp</dimen>
+    <dimen name="padding_horizontal_main">25dp</dimen>
+    <dimen name="padding_top_main">40dp</dimen>
+    <dimen name="padding_bottom_main">20dp</dimen>
+    <dimen name="padding_horizontal_item">30dp</dimen>
+    <dimen name="padding_vertical_item">16dp</dimen>
+    <dimen name="padding_widget">19dp</dimen>
+    <dimen name="padding_horizontal_bar_main_top">30dp</dimen>
 </resources>

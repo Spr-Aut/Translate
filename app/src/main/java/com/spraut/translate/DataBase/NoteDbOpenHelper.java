@@ -25,8 +25,8 @@ public class NoteDbOpenHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_SQL="create table " + TABLE_NAME_NOTE +" (id integer primary key autoincrement, keyword text, value text)";
 
 
-    public NoteDbOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public NoteDbOpenHelper(Context context) {
+        super(context, DB_NAME, null, 1);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class NoteDbOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=getWritableDatabase();
         List<Note>noteList=new ArrayList<>();
 
-        Cursor cursor=db.query(TABLE_NAME_NOTE,null,null,null,null,null,null);
+        Cursor cursor=db.query(TABLE_NAME_NOTE,null,null,null,null,null,"id DESC");
         if (cursor!=null){
             while (cursor.moveToNext()){
                 String keyword=cursor.getString(cursor.getColumnIndex("keyword"));

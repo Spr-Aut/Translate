@@ -4,20 +4,12 @@
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_icon_delete.png.flat",
-        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xhdpi\\icon_delete.png"
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rectangle_stroke.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\rectangle_stroke.xml"
     },
     {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_stroke_black_radus.xml.flat",
-        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\stroke_black_radus.xml"
-    },
-    {
-        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_stroke_gray.xml.flat",
@@ -32,28 +24,64 @@
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_main.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\layout\\item_main.xml"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_main_widget.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\bg_main_widget.xml"
     },
     {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "F:\\Translate\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_translate.xml.flat",
         "source": "F:\\Translate\\app\\src\\main\\res\\layout\\activity_translate.xml"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_icon_delete.png.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xhdpi\\icon_delete.png"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_stroke_black_radus.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\stroke_black_radus.xml"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rectangle_solid.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\rectangle_solid.xml"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_divider.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\divider.xml"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "F:\\Translate\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_add.png.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xhdpi\\add.png"
     },
     {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -68,8 +96,8 @@
         "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "F:\\Translate\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_bg_selector.xml.flat",
+        "source": "F:\\Translate\\app\\src\\main\\res\\drawable\\btn_bg_selector.xml"
     },
     {
         "merged": "F:\\Translate\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",

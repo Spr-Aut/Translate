@@ -18,21 +18,21 @@
     <color name="yellow_f5c342">#f5c342</color>
     <color name="yellow_f6ca45">#f6ca45</color>
     <color name="yellow_f8da61">#f8da61</color>
-    <color name="gray_line">#4d303030</color>
+    <color name="gray_line">#303030</color>
     <color name="light_blue_50">#FFE1F5FE</color>
     <color name="light_blue_200">#FF81D4FA</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
 
-    <color name="main_bg">#f7f7f7</color>
-    <color name="card_bg">#ffffff</color>
+    <color name="main_bg">#1a1a1a</color>
+    <color name="card_bg">#212121</color>
     <color name="dialog_bg">#f5c342</color>
     <color name="button_bg">#f6ca45</color>
-    <color name="button_bg_pressed">#f5b923</color>
-    <color name="main_typeface">#FF000000</color>
-    <color name="widget_bg">#ffffff</color>
-    <color name="widget_typeface_main">#e6000000</color>
-    <color name="widget_typeface_second">#70000000</color>
-    <color name="widget_typeface_third">#4d000000</color>
+    <color name="main_typeface">#FFffffff</color>
+
+    <color name="widget_bg">#1a1a1a</color>
+    <color name="widget_typeface_main">#e6ffffff</color>
+    <color name="widget_typeface_second">#70ffffff</color>
+    <color name="widget_typeface_third">#4dffffff</color>
 
 </resources>

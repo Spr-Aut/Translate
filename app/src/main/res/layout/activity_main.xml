@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:background="@color/main_bg"
+    >
+    <!--顶部标题栏-->
 
-    <EditText
-        android:id="@+id/et_main_content"
+    <!--列表-->
+    <com.spraut.translate.SlideRecyclerView.SlideRecyclerView
+        android:id="@+id/rc_main"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="match_parent"
         />
+
+    <!--“添加”按钮-->
+
     <Button
-        android:id="@+id/btn_main_translate"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        />
-    <TextView
-        android:id="@+id/tv_main_result"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:id="@+id/btn_main_add"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="50dp"
+        android:background="@mipmap/add"
+        android:elevation="5dp"
         />
 
-</LinearLayout>
+
+
+</RelativeLayout>

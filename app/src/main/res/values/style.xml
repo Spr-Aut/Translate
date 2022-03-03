@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主界面顶部时间-->
+    <style name="TextStyleBarMainTop">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!--按钮-->
+    <style name="BtnStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/rectangle_solid</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+    <!--图标按钮-->
+    <style name="BtnIvStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/rectangle_solid</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+    <!--对象-->
+    <style name="TextStyleObject">
+        <item name="android:textColor">@color/widget_typeface_main</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <!--事件-->
+    <style name="TextStyleEvent">
+        <item name="android:textColor">@color/widget_typeface_second</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <!--剩余时间-->
+    <style name="TextStyleRemainTime">
+        <item name="android:textColor">@color/widget_typeface_second</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--目标时间-->
+    <style name="TextStyleTime">
+        <item name="android:textColor">@color/widget_typeface_third</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextStyle26">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--2*2-->
+    <!--对象-->
+    <style name="TextStyleObject22">
+        <item name="android:textColor">@color/widget_typeface_main</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!--事件-->
+    <style name="TextStyleEvent22">
+        <item name="android:textColor">@color/widget_typeface_second</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--剩余时间-->
+    <style name="TextStyleRemainTime22">
+        <item name="android:textColor">@color/widget_typeface_second</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--目标时间-->
+    <style name="TextStyleTime22">
+        <item name="android:textColor">@color/widget_typeface_third</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--日期选择器样式-->
+    <style name="ThemeDialog" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">#A9A0E3</item>
+        <item name="android:colorPrimary">#A9A0E3</item>
+        <item name="android:colorPrimaryDark">#A9A0E3</item>
+        <item name="android:dialogCornerRadius">19dp</item>
+    </style>
+
+    <!--源文本-->
+    <style name="TextStyleOrigin">
+        <item name="android:textColor">@color/widget_typeface_main</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <!--翻译后的文本-->
+    <style name="TextStyleTrans">
+        <item name="android:textColor">@color/widget_typeface_main</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+</resources>

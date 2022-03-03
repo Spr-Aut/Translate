@@ -21,13 +21,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.Translate" >
         <activity android:name="com.spraut.translate.Translate" >
+        </activity>
+        <activity android:name="com.spraut.translate.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.spraut.translate.MainActivity" >
         </activity>
     </application>
 

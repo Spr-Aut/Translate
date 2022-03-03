@@ -1,17 +1,26 @@
-com/spraut/translate/BuildConfig.java
- com.spraut.translate.BuildConfig
-com/spraut/translate/BasicTranslate.java
- com.spraut.translate.BasicTranslate
 com/spraut/translate/TranslateResult.java
  com.spraut.translate.TranslateResult
  com.spraut.translate.TranslateResult$TransResultBean
-com/spraut/translate/MainActivity.java
- com.spraut.translate.MainActivity
- com.spraut.translate.MainActivity$1
- com.spraut.translate.MainActivity$1$1
- com.spraut.translate.MainActivity$2
+com/spraut/translate/SlideRecyclerView/SlideRecyclerView.java
+ com.spraut.translate.SlideRecyclerView.SlideRecyclerView
+com/spraut/translate/DataBase/Note.java
+ com.spraut.translate.DataBase.Note
+com/spraut/translate/BasicTranslate.java
+ com.spraut.translate.BasicTranslate
+com/spraut/translate/BuildConfig.java
+ com.spraut.translate.BuildConfig
 com/spraut/translate/Translate.java
  com.spraut.translate.Translate
  com.spraut.translate.Translate$1
  com.spraut.translate.Translate$2
  com.spraut.translate.Translate$3
+com/spraut/translate/Adapter/TransAdapter.java
+ com.spraut.translate.Adapter.TransAdapter
+ com.spraut.translate.Adapter.TransAdapter$1
+ com.spraut.translate.Adapter.TransAdapter$2
+ com.spraut.translate.Adapter.TransAdapter$TransViewHolder
+com/spraut/translate/DataBase/NoteDbOpenHelper.java
+ com.spraut.translate.DataBase.NoteDbOpenHelper
+com/spraut/translate/MainActivity.java
+ com.spraut.translate.MainActivity
+ com.spraut.translate.MainActivity$1
