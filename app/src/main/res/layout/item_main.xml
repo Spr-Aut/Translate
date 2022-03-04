@@ -12,26 +12,35 @@
         android:paddingHorizontal="@dimen/padding_horizontal_item"
         android:background="@color/card_bg"
         >
-        <!--源文本-->
-        <TextView
-            android:id="@+id/tv_item_origin"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginVertical="@dimen/padding_vertical_item"
-            style="@style/TextStyleOrigin"
-            android:text="Hello"
-            />
-        <!--翻译后的文本-->
-        <TextView
-            android:id="@+id/tv_item_trans"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginVertical="@dimen/padding_vertical_item"
-            style="@style/TextStyleTrans"
-            android:text="你好"
-            />
+            android:orientation="horizontal"
+            >
+            <!--源文本-->
+            <TextView
+                android:id="@+id/tv_item_origin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_alignParentLeft="true"
+                android:layout_marginVertical="@dimen/padding_vertical_item"
+                style="@style/TextStyleOrigin"
+                android:text="Hello"
+                />
+            <!--翻译后的文本-->
+            <TextView
+                android:id="@+id/tv_item_trans"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginVertical="@dimen/padding_vertical_item"
+                android:gravity="right"
+                style="@style/TextStyleTrans"
+                android:text="你好"
+                />
+        </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"

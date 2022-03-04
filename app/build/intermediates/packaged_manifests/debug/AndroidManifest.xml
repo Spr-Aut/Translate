@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.spraut.translate"
     android:versionCode="1"
-    android:versionName="0.1.1.22030301" >
+    android:versionName="0.1.2.22030401" >
 
     <uses-sdk
         android:minSdkVersion="21"

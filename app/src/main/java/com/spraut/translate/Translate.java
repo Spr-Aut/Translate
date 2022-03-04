@@ -2,21 +2,27 @@ package com.spraut.translate;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.ActivityOptions;
 import android.app.Service;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.util.Pair;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -109,6 +115,9 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
         btnAdd.setOnClickListener(this);
         btnCheck.setOnClickListener(this);
 
+        //译文文本框滚动
+        tvResult.setMovementMethod(new ScrollingMovementMethod());
+
         //输入监听
         editTextListener();
     }
@@ -152,9 +161,15 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
             case R.id.btn_clear_translate://清空输入框
                 /*etContent.setText("");
                 ivClearTx.setVisibility(View.GONE);*/
+                showMsg("已清空");
                 stateSwitch(STATE_INIT);
                 break;
             case R.id.btn_trans_translate://翻译
+                /*if (hasInternetPermission()==1){
+                    translate();
+                }else {
+                    showMsg("请授予本应用联网权限");
+                }*/
                 translate();
                 break;
             case R.id.btn_add_translate://添加到单词本
@@ -271,8 +286,7 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
         note.setKeyword(keyword);
         note.setValue(value);
         noteDbOpenHelper.insertData(note);
-        stateSwitch(STATE_INIT);
-        showMsg("添加成功");
+        stateSwitch(STATE_AFTER_ADD);
     }
 
     //控件状态切换
@@ -304,8 +318,8 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
                 btnClear.setVisibility(View.VISIBLE);//显示清除按钮
                 break;
             case STATE_AFTER_ADD:
+                showMsg("添加 "+etContent.getText());
                 stateSwitch(STATE_INIT);
-                showMsg("添加成功");
                 break;
             case STATE_INIT:
                 etContent.setText("");
@@ -319,8 +333,23 @@ public class Translate extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+    //判断是否有联网权限
+    private int hasInternetPermission(){
+        int PERMISSION_INTERNET_REQUEST_CODE=0;
+        int hasInternetPermission= ContextCompat.checkSelfPermission(getApplication(), Manifest.permission.INTERNET);
+
+        if (hasInternetPermission!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(Translate.this,new String[]{Manifest.permission.INTERNET},PERMISSION_INTERNET_REQUEST_CODE);
+        }else {
+            PERMISSION_INTERNET_REQUEST_CODE=1;
+        }
+        return PERMISSION_INTERNET_REQUEST_CODE;
+    }
+
     private void showMsg(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.TOP,0,0);
+        toast.show();
     }
 
     private void setStatusBar(){

@@ -96,10 +96,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 shake();
-                Pair pairInfo=new Pair<>(ivInfo,"ivInfo");
+                /*Pair pairInfo=new Pair<>(ivInfo,"ivInfo");
                 ActivityOptions activityOptions=ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairInfo);
                 Intent intent=new Intent(MainActivity.this,AboutActivity.class);
-                startActivity(intent,activityOptions.toBundle());
+                startActivity(intent,activityOptions.toBundle());*/
+                Intent intent=new Intent(MainActivity.this,AboutActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.base_slide_top_in,R.anim.base_slide_bottom_ou);
             }
         });
 

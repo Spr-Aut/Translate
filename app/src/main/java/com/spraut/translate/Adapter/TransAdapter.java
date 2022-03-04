@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.text.method.ScrollingMovementMethod;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,6 +125,7 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         int row=mNoteDbOpenHelper.deleteFromDbById(note.getId()+"");
         if(row>0){
             removeData(position);
+            showMsg("删除 "+note.getKeyword());
         }
     }
 
@@ -155,7 +158,9 @@ public class TransAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     private void showMsg(String msg) {
-        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+        Toast toast = Toast.makeText(mContext, msg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM,0,0);
+        toast.show();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

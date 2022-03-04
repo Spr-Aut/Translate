@@ -2,7 +2,7 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.spraut.translate"
 4    android:versionCode="1"
-5    android:versionName="0.1.1.22030301" >
+5    android:versionName="0.1.2.22030401" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
@@ -11,7 +11,7 @@
 9-->F:\Translate\app\src\main\AndroidManifest.xml
 10    <!-- 网络访问权限 -->
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->F:\Translate\app\src\main\AndroidManifest.xml:5:5-67
+11-->F:\Translate\app\src\main\AndroidManifest.xml:5:5-66
 11-->F:\Translate\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.VIBRATE" />
 12-->F:\Translate\app\src\main\AndroidManifest.xml:6:5-66

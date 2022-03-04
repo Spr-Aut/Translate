@@ -34,4 +34,9 @@ public class AboutActivity extends AppCompatActivity {
         /*window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);*/
         window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }
+
+    public void onBackPressed(){
+        super.onBackPressed();
+        overridePendingTransition(R.anim.base_slide_bottom_in,R.anim.base_slide_top_ou);
+    }
 }
